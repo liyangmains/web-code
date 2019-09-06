@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe框架</title>
+</head>
+<body>
+    <!--
+        scrolling 属性 yes加滚动条 no取消滚动条 auto自适应
+        frameborder 属性 1有边框（默认） 0无边框
+        配合使用a标签 target属性内嵌网页
+    -->
+    <iframe src="http://www.baidu.com" frameborder="1" name="framename" scrolling="auto" width="100%" height="200px"></iframe>
+    <a href="http://www.sina.com.cn" target="framename">新浪</a>
+    <a href="http://www.baidu.com" target="framename">百度</a>
+    <hr>
+    <iframe src="../day01/字体样式_特殊符号.html"></iframe>
+</body>
+</html>

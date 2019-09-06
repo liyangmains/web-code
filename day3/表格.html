@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+</head>
+<body>
+    <!--
+        table列表标签
+            tr 行
+            td 列
+            caption表格标题
+    -->
+    <table border="1px" width="200px" align="center">
+        <caption>统计报表</caption>
+        <tr>
+            <td>表格</td>
+            <td>表格</td>
+            <td>表格</td>
+        </tr>
+        <tr>
+            <td>表格</td>
+            <td>表格</td>
+            <td>表格</td>
+        </tr>
+        <tr>
+            <td>表格</td>
+            <td>表格</td>
+            <td>表格</td>
+        </tr>
+    </table>
+    <hr>
+    <table align="center" border="1px" bordercolor="red">
+        <caption>表格结构介绍</caption>
+        <thread>
+            <tr>
+                <th>表格属性名称</th>
+                <th>表格属性描述</th>
+            </tr>
+        </thread>
+        <tbody>
+            <tr>
+                <td>table</td>
+                <td>表格标签</td>
+            </tr>
+            <tr>
+                <td>caption</td>
+                <td>表格标题</td>
+            </tr>
+            <tr>
+                <td>thead</td>
+                <td>表格头部</td>
+            </tr>
+            <tr>
+                <td>tbody</td>
+                <td>表格主题,表格没有thread,tfoot默认都为tbody</td>
+            </tr>
+            <tr>
+                <td>tfoot</td>
+                <td>表格尾部</td>
+            </tr>
+            <tr>
+                <td>tr</td>
+                <td>表格行</td>
+            </tr>
+            <tr>
+                <td>th</td>
+                <td>表格单元格页眉与td同级</td>
+            </tr>
+            <tr>
+                <td>td</td>
+                <td>表格单元格内容与th同级</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>版权所有</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <table align="center" width="800px" height="500px" border="1px" bordercolor="red" cellspacing="5px" cellpadding="20px">
+        <caption><b>表格属性介绍</b></caption>
+        <tr>
+            <th>属性名</th>
+            <th>属性描述</th>
+        </tr>
+        <tr>
+            <td>align</td>
+            <td>表格水平方向</td>
+        </tr>
+        <tr>
+            <td>border</td>
+            <td>表格边框</td>
+        </tr>
+        <tr>
+            <td>bordercolor</td>
+            <td>表格边框颜色</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>表格宽度</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>表格高度</td>
+        </tr>
+        <tr>
+            <td>cellspacing</td>
+            <td>单元格边距</td>
+        </tr>
+        <tr>
+            <td>cellpadding</td>
+            <td>单元格与单元格内容之间间隔</td>
+        </tr>
+        <tr>
+            <td>background</td>
+            <td>表格背景图片</td>
+        </tr>
+        <tr>
+            <td>bgcolor</td>
+            <td>表格背景颜色</td>
+        </tr>
+    </table>
+    <hr>
+    <table align="center" border="1px" width="800px">
+        <caption><b>表格行和列属性</b></caption>
+        <tr height="88px">
+            <th>属性名</th>
+            <th>属性描述</th>
+        </tr>
+        <tr height="66px" align="center">
+            <td>height</td>
+            <td>行高</td>
+        </tr>
+        <tr height="66px" align="center">
+            <td>align</td>
+            <td>设置水平对齐方式，left,center,right</td>
+        </tr>
+        <tr height="66px" align="center">
+            <td>valign</td>
+            <td>设置垂直对齐方式，top,middle,bottom</td>
+        </tr>
+        <tr height="66px" align="center">
+            <td>bgcolor</td>
+            <td>单元格背景颜色</td>
+        </tr>
+        <tr height="66px" align="center">
+            <td>colspan</td>
+            <td>单元格跨列</td>
+        </tr>
+        <tr height="66px" align="center">
+            <td>rowspan</td>
+            <td>单元格跨行</td>
+        </tr>
+    </table>
+    <hr>
+    <table align="center" border="1px" width="800px" height="800px">
+        <caption><b>表格合并</b></caption>
+        <tr>
+            <td colspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+    <hr>
+    <table align="center" border="1px" bordercolor="red" width="800px" height="500px">
+        <caption><h1>学生成绩表</h1></caption>
+        <tr>
+            <th colspan="3">学生基本信息</th>
+            <th colspan="2">成绩</th>
+        </tr>
+        <tr align="center">
+            <td><b>姓名</b></td>
+            <td><b>性别</b></td>
+            <td><b>专业</b></td>
+            <td><b>课程</b></td>
+            <td><b>分数</b></td>
+        </tr>
+        <tr align="center">
+            <td>球球</td>
+            <td>男</td>
+            <td rowspan="2">计算机</td>
+            <td rowspan="3">程序设计</td>
+            <td>68</td>
+        </tr>
+        <tr align="center">
+            <td>楠楠</td>
+            <td>女</td>
+            <td>89</td>
+        </tr>
+        <tr align="center">
+            <td>小明</td>
+            <td>男</td>
+            <td>会计</td>
+            <td>68</td>
+        </tr>
+        <tr align="center">
+            <td>小明</td>
+            <td>男</td>
+            <td>建筑</td>
+            <td>建筑设计</td>
+            <td>68</td>
+        </tr>
+    </table>
+</body>
+</html>
