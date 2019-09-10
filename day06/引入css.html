@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引入css</title>
+    <!--
+        样式优先级顺序
+        内联样式（行内样式）> 内部样式 > 外部样式 > 导入样式
+
+    -->
+    <!--外部样式-->
+    <!--<link href="./css/css引入.css" rel="stylesheet"/>-->
+    <!--内部样式-->
+    <style type="text/css">
+       span{
+           color: red;
+           font-size: 20px;
+       }
+    </style>
+    <!--导入样式-->
+    <style type="text/css">
+        @import url("./css/css引入.css");
+    </style>
+</head>
+<body>
+<hr>
+<h1>1111111</h1>
+<!--内联样式-->
+<p style="color: red;font-size: 20px;">22222222222222222222222222</p>
+<span>333333333333333333333333</span>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>audio标签</title>
+</head>
+<body>
+    <!--
+        audio支持格式ogg,mp3,wav
+         autoplay 自动播放
+         controls 显示播放等控件
+         muted 静音播放
+         loop 设置重复播放次数(不设置值默认重复不限定重复次数)正数代表播放次数，负数或者不设置值不限次数
+    -->
+    <audio src="./mp3/Jillian%20Rae%20-%20Wayward%20One.mp3" autoplay loop controls muted></audio>
+    <hr>
+    <!--如果浏览器不支持某种格式的音频，可以将一种音频转换成3种格式-->
+    <audio controls>
+        <source src="./mp3/Jillian%20Rae%20-%20Wayward%20One.mp3">
+        <source src="./mp3/Jillian%20Rae%20-%20Wayward%20One.ogg">
+        不支持当前格式播放
+    </audio>
+</body>
+</html>

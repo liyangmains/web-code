@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增h5结构标签二</title>
+</head>
+<body>
+    <!--列表-->
+    <dl>
+        <dt>
+            <img src="./images/t010d337c5658f73a5e.jpg" alt="未加载到图片" title="图片标题">
+        </dt>
+        <dd>麻花藤图片</dd>
+        <dd>麻花藤图片</dd>
+        <dd>麻花藤图片</dd>
+    </dl>
+    <hr>
+    <!--多元素组合，用户图片与图片组合-->
+    <figure>
+        <img src="./images/t010d337c5658f73a5e.jpg" alt="未加载到图片" title="图片标题">
+        <figcaption>麻花藤图片</figcaption>
+        <figcaption>麻花藤图片</figcaption>
+        <figcaption>麻花藤图片</figcaption>
+    </figure>
+    <hr>
+    <!--文章与内容组合-->
+    <details>
+        <summary>标题</summary>
+        <p>1222222222222222222222222222222222222222222222222222222222</p>
+    </details>
+    <hr>
+    <!--mark文本突出显示背景颜色-->
+    <p>文本<mark>突出</mark>显示背景色</p>
+    <hr>
+    <!--
+        meter标签定义度量衡，仅用于已知最大和最小
+        min最小值
+        max最大值
+        value默认值
+        low最小临界点（低于临界点颜色会有变化）
+        high最大临界点（超过临界点颜色会有变化）
+    -->
+    <meter min="0" max="100" value="99" low="60" high="90"></meter>
+    <hr>
+    <!--
+        progress进度条
+        max最大值
+        value当前进度
+    -->
+    <progress max="100" value="66"></progress>
+    <hr>
+    <!--
+        datalist选项列表配合input输入框使用
+        input标签list属性绑定datalist标签id属性值
+    -->
+    <input type="text" list="start">
+    <datalist id="start">
+        <option value="">刘亦菲</option>
+        <option value="">袁冰妍</option>
+        <option value="">李冰冰</option>
+        <option value="">范冰冰</option>
+        <option value="">高圆圆</option>
+        <option value="">李小璐</option>
+    </datalist>
+</body>
+</html>

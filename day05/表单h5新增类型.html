@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h5新增类型</title>
+</head>
+<body>
+    <!--
+        input h5新增类型
+         email 邮箱格式，信息需带有@格式字符串
+         search 搜索框
+         url 输入的类型必须包含http://
+         color 颜色控件
+         number 数字类型 value默认值，min最小值max最大值 step递增
+         range 范围类型
+         date 日期类型
+         week 周类型(当前日期是今年第几周)
+         month 当前月份
+    -->
+    <form action="" method="get">
+        <p>用户名：<input type="text" name="username"></p>
+        <p>邮箱： <input type="email" name="email"></p>
+        <p>搜索： <input type="search"></p>
+        <p>网站：<input type="url"></p>
+        <p>颜色：<input type="color"></p>
+        <p>成绩：<input type="number" min="0" max="100" step="2"></p>
+        <p>范围：<input type="range" name="fanwei" min="0" max="100" value="60" step="10"></p>
+        <p>日期：<input type="date" name="date"></p>
+        <p>周：<input type="week"></p>
+        <p>月：<input type="month"></p>
+        <input type="submit">
+    </form>
+</body>
+</html>

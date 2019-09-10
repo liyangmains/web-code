@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+        input 单标签
+        input通过type属性来更改它的形状
+    -->
+    <table align="center" border="1px">
+        <caption><p>input标签type属性介绍</p></caption>
+        <tr>
+            <th>属性值</th>
+            <th>描述</th>
+        </tr>
+        <tr align="center">
+            <td>text</td>
+            <td>单行文本框(默认为text)</td>
+        </tr>
+        <tr align="center">
+            <td>password</td>
+            <td>密码框</td>
+        </tr>
+        <tr align="center">
+            <td>radio</td>
+            <td>单选框</td>
+        </tr>
+        <tr align="center">
+            <td>checkbox</td>
+            <td>复选框</td>
+        </tr>
+        <tr align="center">
+            <td>hidden</td>
+            <td>隐藏域</td>
+        </tr>
+        <tr align="center">
+            <td>file</td>
+            <td>文件上传</td>
+        </tr>
+        <tr align="center">
+            <td>submit</td>
+            <td>提交按钮</td>
+        </tr>
+        <tr align="center">
+            <td>button</td>
+            <td>普通按钮</td>
+        </tr>
+        <tr align="center">
+            <td>reset</td>
+            <td>重置按钮</td>
+        </tr>
+    </table>
+    <!--
+        文本框text
+            name 文本框名称
+            value 文本框初始值
+    -->
+    <h1>文本框</h1>
+    <form action="" method="get" >
+        <p>用户名:<input type="text" name="username" value="admin"></p>
+        <p>密码: <input type="password" name="password"></p>
+    </form>
+    <hr>
+    <!--
+        单选框radio
+         name 单选框名称
+         value  单选框默认值
+         checked 默认选中
+         实现单选需name名称一致
+        复选框checkbox
+          name 复选框名称
+          value 复选框默认值
+          checked 默认选中
+    -->
+    <h1>单选复选框</h1>
+    <form action="" method="get">
+        <p>性别： 男<input type="radio" name="sex" >&nbsp;&nbsp;女<input type="radio" name="sex" checked></p>
+        <p>爱好：打篮球<input type="checkbox">&nbsp;玩游戏<input type="checkbox"></p>
+    </form>
+    <hr>
+    <!--
+        文件上传file
+          name 上传文件名称
+          上传文件需注意method需要设置为post
+          enctype设置为multipart/form-data二进制传输，
+          默认为application/x-www-form-urlencoded
+    -->
+    <h1>文件上传</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        头像:<input type="file" name="topicFile">
+    </form>
+    <hr>
+    <!--
+        隐藏域hidden
+          name 隐藏域名称
+          value 隐藏域默认值
+    -->
+    <h1>隐藏域</h1>
+    <form action="" method="get">
+        <p>隐藏域：<input type="hidden"></p>
+    </form>
+    <hr>
+    <!--
+        按钮
+          button普通按钮
+          submit提交按钮
+    -->
+    <h1>按钮</h1>
+    <form action="" method="get">
+        <p>普通按钮：<input type="button" value="注册"></p>
+        <p>提交按钮：<input type="submit" value="登录"></p>
+        <p>重置按钮: <input type="reset"></p>
+        <p>图像图片按钮: <input type="image" src="./images/提交按钮.png" width="80px"></p>
+        <p><button>提交</button></p>
+    </form>
+    <hr>
+    <!--
+        下拉列表select
+          name 下拉列表名称
+          multiple 下拉列表多选
+          size 下拉列表显示数据条数
+          disabled 禁用下拉列表
+         option
+          selected默认选中
+          value选中提交的值
+    -->
+    <h1>下拉列表</h1>
+    <form action="" method="get">
+        <select name="sel" id="">
+            <option value="">请选择省份</option>
+            <option value="山西" selected>山西</option>
+            <option value="广西">广西</option>
+            <option value="江西">江西</option>
+            <option value="湖南">湖南</option>
+            <option value="广东1">广东</option>
+        </select>
+        <input type="submit">
+    </form>
+    <hr>
+    <select name="sel2" id="">
+        <optgroup label="湖南省">
+            <option value="">长沙</option>
+            <option value="">岳阳</option>
+            <option value="">湘潭</option>
+            <option value="">株洲</option>
+            <option value="">常德</option>
+        </optgroup>
+        <optgroup label="广东省">
+            <option value="">广州</option>
+            <option value="" selected>深圳</option>
+            <option value="">佛山</option>
+            <option value="">湛江</option>
+            <option value="">潮汕</option>
+        </optgroup>
+    </select>
+    <hr>
+    <!--
+        多行文本textarea
+            cols文本框宽度
+            rows文本框高度
+    -->
+    <h1>文本域</h1>
+    <form action="" method="get">
+        <textarea name="gerenjieshao" cols="20" rows="10">个人介绍</textarea>
+        <input type="submit">
+    </form>
+    <hr>
+    <!--
+        lable使用方法
+         直接使用lable标签包裹input
+         通过label的for指向按钮的id绑定
+         一般与radio,checkbox配合使用
+    -->
+    <h1>指定区域文本框选中</h1>
+    <p><label>用户名：<input type="text" name="username"></label></p>
+    <p><label for="pwd">密码：</label><input type="password" name="password" id="pwd"></p>
+    <hr>
+</body>
+</html>

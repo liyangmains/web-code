@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas标签</title>
+    <style type="text/css">
+        canvas{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        canvas必须配合js在网页上绘制图像
+        画布是一个矩形区域，我们可以绘制其中每个像素
+        canvas用户多种绘制路径、矩形、圆形...
+        obj.rect(0,0,100,100);创建矩形
+        obj.fillRect(0,0,100,100);绘制填充矩形
+        obj.strokeRect(100,100,100,100);创建不填充矩形
+        obj.shadowColor="rgb(11,25,9)";设置阴影颜色
+        obj.shadowOffsetX=3;obj.shadowOffsetY=3;设置xy偏移量
+        obj.shadowBlur=5;设置模糊级别
+
+    -->
+    <canvas id="mycanvas" width="400px" height="400px">
+        您的浏览器版本太低
+    </canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("mycanvas");
+        var obj = canvas.getContext("2d");
+        //obj.rect(0,0,100,100);
+        //坐标从x,y(0,0)至x,y(100,0)结束
+        //创建线性渐变
+        //var gradient = obj.createLinearGradient(0,0,100,0);
+        //圆形渐变
+        //(圆心坐标（50,50）小圆半径10，大圆半径50)
+        var gradient = obj.createRadialGradient(50,50,10,50,50,50);
+        //渐变颜色停止位置
+        gradient.addColorStop(0,"red");
+        gradient.addColorStop(0.5,"blue");
+        gradient.addColorStop(1,"green");
+
+        obj.shadowColor="rgb(11,25,9)";
+        obj.shadowOffsetX=3;
+        obj.shadowOffsetY=3;
+        obj.shadowBlur=5;
+
+        //obj.fillStyle="red";
+        obj.fillStyle=gradient;
+        obj.fillRect(0,0,100,100);
+        obj.strokeStyle="green";
+        obj.strokeRect(100,100,100,100);
+
+
+    </script>
+</body>
+</html>
