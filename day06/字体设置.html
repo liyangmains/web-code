@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体设置</title>
+    <style type="text/css">
+        div{
+            /*设置字体间距*/
+            letter-spacing: 5px;
+            /*设置字体透明度(.1=0.1透明区间0-1) 0为完全透明 1为不透明*/
+            /*background-color: rgba(255,0,0,1);
+            color: rgba(2,0,0,.1);*/
+            color: red;
+            opacity: 0.5;
+            /*
+                内容溢出overflow
+                    hidden 隐藏
+                    auto 自动
+                    scroll 滚动条
+            */
+            overflow: hidden;
+        }
+        .m{
+            width: 100px;
+            height: 20px;
+            overflow: hidden;
+            /*字体在同一行显示*/
+            white-space: nowrap;
+            /*当文字超出时可设置text-overflow来显示省略号(默认clip简单截取)*/
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>
+            1. 以下关于微信开放生态的说法，错误的是（10分）
+        </h1>
+        <p>
+            A. 超过500万服务号<br>
+            B. 超过2000万企业号用户<br>
+            C. 超过1000万订阅号<br>
+            D. 超过100万小程序<br>
+            E. 约10万家微信应用开发企业<br>
+            F. 企业微信注册企业超过150万<br>
+        </p>
+
+        <h1>
+            2. 以下功能不属于政务微信/企业微信本地版可以自行配置开关的是？（10分）
+        </h1>
+        <p>
+            A. 红包功能<br>
+            B. VOIP功能<br>
+            C. PC客户端限制外网访问<br>
+            D. 打开登录时短信二次验证码<br>
+            E. 日程管理和同事吧功能<br>
+            F. 第三方加密<br>
+            G. 群聊功能<br>
+        </p>
+        <h1>
+            3. 以下功能，不属于政务微信内置的标准功能的是？（10分）
+        </h1>
+        <p>
+            A. 阅后即焚<br>
+            B. 回执消息<br>
+            C. 休息一下<br>
+            D. 标注聊天信息<br>
+            E. 企业邮箱<br>
+            F. 红包<br>
+        </p>
+    </div>
+    <p class="m">以下功能，不属于政务微信内置的标准功能的是？</p>
+</body>
+</html>

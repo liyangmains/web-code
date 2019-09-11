@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表属性</title>
+    <style type="text/css">
+        .ul{
+            /*list-style-image: url("");设置列表li图标图片*/
+            /*
+               设置列表的图标
+           */
+            list-style-type: circle;
+        }
+        li{
+            /*
+                设置图标在li文本域范围默认outside外面
+            */
+            list-style-position: inside;
+            width: 100px;
+            border: 1px solid;
+        }
+        /*后代选择器*/
+        ul li b{
+            font-size: 50px;
+        }
+        .parent span{
+            color: red;
+        }
+        /*子代选择器*/
+        .parent2>span{
+            color: red;
+        }
+        /*相邻兄弟选择器(相邻第一个，不包括自身)*/
+        /*p+span{
+            color: red;
+        }*/
+        /*通用兄弟选择器(不包括自身)*/
+        p~span{
+            color:red;
+        }
+        /*
+            属性选择器
+            ~代表属性值等于当前值的
+            ^代表属性值以当前值开头的
+            $代表属性值以当前值结尾的
+            *代表属性值包含当前值的
+            |代表属性值以当前值开头并且用-隔开（p[class |= p]属性值满足条件p-paragraph）
+        */
+        /*p[class]{
+            color: red;
+        }*/
+        p[class~=p1]{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="ul">
+        <li><b>西瓜</b></li>
+        <li><b>苹果</b></li>
+        <li><b>香蕉</b></li>
+    </ul>
+    <div class="parent">
+        <span>子</span>
+        <div>
+            子
+            <span>孙</span>
+        </div>
+    </div>
+    <div class="parent2">
+        <span>子</span>
+        <div>
+            子
+            <span>孙</span>
+        </div>
+    </div>
+    <p>1212121</p>
+    <span>第一</span>
+    <span>第二</span>
+    <p class="p1 paragraph p11">1</p>
+    <p class="p1paragraph p11">2</p>
+    <p class="p1">3</p>
+    <p class="paragraph p1 p11">4</p>
+    <p class="p11">5</p>
+</body>
+</html>

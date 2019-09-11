@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景图片颜色</title>
+    <style type="text/css">
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            background-image: url("../day05/images/t010d337c5658f73a5e.jpg");
+            /*
+                设置图片不重复平铺
+                repeat-x横坐标平铺
+                repeat-y纵坐标平铺
+                no-repeat不平铺
+            */
+            background-repeat: no-repeat;
+            /*
+                图片占背景比例
+                px 设置背景图像的高度和宽度，第一个为宽度第二个为高度，设置一个值，第二个默认为auto
+                % 设置背景图像的高度和宽度的百分比，第一个为宽度第二个为高度，设置一个值，第二个默认为auto
+                cover 背景图扩展足够大，使背景图完全覆盖背景区域，背景图像的默写部分无法显示在背景定位区域中
+                contain 把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域
+            */
+            /*background-size: 100% 100%;*/
+            /*
+                定位图片位置
+                （第一参数代表水平位置，第二个代表垂直位置，只设置一个参数第二个参数默认center居中）
+                    方位名称 left top right center bottom
+                    精确数字
+                    混搭
+            */
+            background-position: right top;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

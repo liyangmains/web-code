@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本属性</title>
+    <style type="text/css">
+        h3{
+            /*文本对齐方式*/
+            text-align: center;
+        }
+        a{
+            /*
+                text-decoration(默认none)
+                指定文本有无装饰
+                underline 下划线
+                overline 上划线
+                line-through贯穿线，类似于删除标签的效果
+             */
+            text-decoration: none;
+            /*
+                text-transform设置文本大小写默认none
+                    capitalize每个英文的首字母大写
+                    uppercase全部转为大写
+                    lowercase全部转为小写
+             */
+            text-transform: capitalize;
+        }
+        p{
+            /*
+                文本缩进
+                px
+                em(1em=一个字体大小=16px)
+            */
+            text-indent: 2em;
+        }
+        .a{
+            width: 100px;
+            /*换行默认水平方向不换行*/
+            word-wrap: break-word;
+        }
+        #t{
+            height: 100px;
+            background-color: red;
+            font-size: 20px;
+            /*
+                line-height设置对象的行高
+                    normal默认
+                    number设置数字10，此数字会与当前的字体尺寸相乘来设置行间距
+                    length设置固定的行间距10px，一般设置文字的垂直居中，当行高等于高时，一行文字垂直居中
+            */
+            /*line-height: 5;*/
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>我是标题</h3>
+    <a href="http://www.baidu.com">bai du 百度</a>
+    <p>1111111111111111111111111111111111111111111111111111111111111111111</p>
+    <p class="a">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <p id="t">我是大魔王</p>
+</body>
+</html>
