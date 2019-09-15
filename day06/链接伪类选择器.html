@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>链接伪类选择器</title>
+    <style type="text/css">
+        a{
+            /*去除下划线*/
+            text-decoration: none;
+            font-size: 50px;
+            font-weight: 800;
+        }
+        /*
+            链接伪类选择器顺序，l-v-h-a(否则样式无效)
+        */
+        /*未访问链接*/
+        a:link{
+            color: red;
+        }
+        /*访问过的链接*/
+        a:visited{
+            color: beige;
+        }
+        /*鼠标移动到链接时的样式*/
+        a:hover{
+            color: yellow;
+        }
+        /*鼠标点击时的样式*/
+        a:active{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">百度</a>
+</body>
+</html>

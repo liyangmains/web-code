@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style type="text/css">
+        /*
+            指定元素之前添加
+                content内容,可添加图片url()
+                color颜色
+        */
+        p:before{
+            content: '张大飞，';
+        }
+        p:after{
+            content: '!';
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>我是大帅哥</p>
+</body>
+</html>
