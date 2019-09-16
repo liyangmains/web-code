@@ -1,0 +1,21 @@
+div{
+    width: 234px;
+    height: 460px;
+    background-color: #2e233e;
+    padding: 20px 0px;
+    box-sizing: border-box;
+}
+a{
+    /*消除下划线*/
+    text-decoration: none;
+    color: white;
+}
+div li{
+    font-size: 14px;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+}
+li:hover{
+    background-color: #ff6700;
+}

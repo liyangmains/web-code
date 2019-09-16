@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>怪异盒子</title>
+    <style type="text/css">
+        /*
+            怪异盒子box-sizing
+            content-box(默认标准)
+              padding和border不被包含在width和height内，元素的实际大小为
+              宽高+border+padding,此为标准模式下的盒模型（W3C）
+            border-box(怪异)
+              padding和border包含在width和height内，元素的实际大小不会因
+              为内边距改变而改变,此为怪异模式下的盒模型(IE)
+        */
+        .a{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 2px solid red;
+            padding-left: 50px;
+        }
+        .b{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 2px solid red;
+            padding-left: 50px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="a"></div>
+    <div class="b"></div>
+</body>
+</html>

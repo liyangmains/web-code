@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子-外边距合并</title>
+    <style type="text/css">
+        /*div:first-child{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px;
+
+            如下div块添加边距是无反应的
+            需添加div块包裹
+              1、设置外边框
+              2、设置内边框
+              3、设置文本溢出
+
+            border: 1px solid;
+
+        }
+        div:last-child{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px;
+        }
+        */
+
+        /*
+        行内元素不享受左右边距合并
+        合并外边距
+        1、设置外边框
+        2、设置内边框
+        3、设置文本溢出 overflow
+         */
+        .parent{
+            width: 600px;
+            height: 600px;
+            /*border: 1px solid red;*/
+            /*padding: 1px;*/
+            overflow: hidden;
+            background-color: red;
+        }
+        .fist-child{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin: 50px;
+        }
+        .last-child{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="fist-child"></div>
+        <div class="last-child"></div>
+    </div>
+</body>
+</html>

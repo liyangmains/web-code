@@ -1,0 +1,9 @@
+/*全局样式*/
+ol,ul,li,div,body,h1{
+    margin: 0;
+    padding: 0;
+}
+ol,ul,li{
+    /*消除图标样式*/
+    list-style: none;
+}
