@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>堆叠顺序</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            /*
+                absolute 绝对定位，层叠效果往上叠加
+            */
+            position: absolute;
+            /*
+                z-index（需配合定位使用）
+                设置堆叠顺序，值越大堆叠越高
+            */
+        }
+        div:first-child{
+            background-color: pink;
+            z-index: 1;
+        }
+        div:nth-child(2){
+            background-color: orange;
+            left: 30px;
+            top: 30px;
+            z-index: 3;
+        }
+        div:last-child{
+            background-color: skyblue;
+            left: 60px;
+            top: 60px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

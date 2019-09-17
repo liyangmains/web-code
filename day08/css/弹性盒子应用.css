@@ -1,0 +1,53 @@
+body{
+    background-color: #f4f4f4;
+}
+.nav{
+    width: 100%;
+    height: 75px;
+    background-color: #ff4433;
+    display: flex;
+}
+.left,.right{
+    width: 75px;
+    height: 75px;
+}
+.left{
+    background: url("../images/百度周边_03.png") no-repeat center;
+}
+.title{
+    height: 75px;
+    flex-grow: 1;
+    font-size: 20px;
+    color: #fff;
+    line-height: 75px;
+}
+.right{
+    background: url("../images/百度周边_08.png") no-repeat center;
+}
+.food{
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+.food div{
+    width: 20%;
+}
+.menu{
+    background-color: #fff;
+    margin-top: 20px;
+}
+.menu>div{
+    display: flex;
+}
+.menu>div:first-child{
+    border-bottom: 1px solid #f2f4f5;
+}
+.menu>div>div{
+    flex-grow: 1;
+    border-right: 1px solid #f2f4f5;
+    margin: 30px 0;
+}
+.menu>div>div:last-child{
+    border-right: none;
+}

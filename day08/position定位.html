@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position定位</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*
+                定位position
+                  static 静态定位偏移量不起作用，一般去除相对定位
+                  absolute 绝对定位元素，相对于static定位以外的第一个
+                           父元素进行定位。元素的位置通过left,top,right
+                           以及bottom属性进行规定，不占用空间
+                  relative 相对定位元素，相对于自己来偏移,继续占用空间
+                  fixed 固定定位 不会随着页面滚动而移动
+            */
+            /*position: absolute;
+            left: 200px;
+            top: 200px;*/
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

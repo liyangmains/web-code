@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display属性</title>
+    <style>
+        .box>div{
+            width: 300px;
+            height: 300px;
+            /*float: left;*/
+            /*
+            display属性值
+                none 隐藏对象
+                inline-block 行内块级元素
+                block 指定对象为块元素
+                inline 指定对象为内联元素（行内元素）
+                table-cell 指定对象做为表格单元格
+                flex 弹性盒
+            */
+            display: inline-block;
+            /*
+            对象隐藏
+                display:none;使对象隐藏并不会占用空间
+                opacity:0 使对象隐藏并占用空间
+                visibility:hidden 使对象隐藏并占用空间
+            */
+        }
+        .box>div:first-child{
+            background-color: pink;
+        }
+        .box>div:nth-child(2){
+            background-color: aqua;
+        }
+        .box>div:last-child{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

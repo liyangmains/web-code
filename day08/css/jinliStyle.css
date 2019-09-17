@@ -1,0 +1,85 @@
+.nav{
+    width: 100%;
+    height: 104px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+    margin: 0 356px;
+}
+.logo,.title{
+    float: left;
+}
+.logo{
+    width: 205px;
+}
+.logo>img{
+    margin-top: 25px;
+}
+.title{
+    width: 991px;
+    height: 103px;
+}
+
+.title div ul li a:hover{
+    color: #ef4222;
+}
+.title_top{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.title_top ul{
+    float: right;
+}
+.title_top ul li{
+    float: left;
+}
+.title_top ul li a{
+    color: #9f9f9f;
+    margin: 0 10px;
+}
+.title_top ul li:first-child a{
+    color: #ef4222;
+}
+.title_bottom{
+    width: 100%;
+    height: 63px;
+    line-height: 63px;
+    /*padding-left: 120px;*/
+    /*box-sizing: border-box;*/
+}
+.title_bottom ul{
+    float: right;
+}
+.title_bottom ul li{
+    float: left;
+}
+.title_bottom ul li a{
+    color: #000;
+    margin-left: 52px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+.search{
+    width: 170px;
+    height: 30px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding-left: 5px;
+    margin-top: 16.5px;
+    margin-left: 120px;
+}
+.search>input{
+    width: 138px;
+    height: 28px;
+    float: left;
+}
+.search>button{
+    width: 25px;
+    height: 28px;
+    float: left;
+    background-color: #fff;
+    border: none;
+}
+img,input{
+    border: none;
+}
