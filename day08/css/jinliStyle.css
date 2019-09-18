@@ -1,9 +1,13 @@
 .nav{
     width: 100%;
-    height: 104px;
+    height: 103px;
     border-bottom: 1px solid #f0f0f0;
     background-color: #fff;
-    margin: 0 356px;
+    position: fixed;
+}
+.meta{
+    width: 1196px;
+    margin: 0 auto;
 }
 .logo,.title{
     float: left;
@@ -50,12 +54,12 @@
 .title_bottom ul{
     float: right;
 }
-.title_bottom ul li{
+.title_bottom>ul>li{
     float: left;
 }
-.title_bottom ul li a{
+.title_bottom>ul>li>a{
     color: #000;
-    margin-left: 52px;
+    margin-left: 62px;
     font-size: 16px;
     font-weight: bolder;
 }
@@ -82,4 +86,111 @@
 }
 img,input{
     border: none;
+}
+.phone_title{
+    width: 100%;
+    height: 260px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+    /*绝对定位（原点）*/
+    /*position: absolute;*/
+    position: fixed;
+    left: 0;
+    top: 104px;
+    /*隐藏*/
+    display: none;
+}
+.phone_title>div{
+    width: 991px;
+    height: 260px;
+    margin: 0 356px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    float: left;
+}
+.phone_title div div{
+    height: 256px;
+    margin-top: 20px;
+}
+
+.phone:hover .phone_title{
+    display: block;
+}
+.phone_title>div>div>ul>li{
+    line-height: 32px;
+    color: #9f9f9f;
+    font-size: 14px;
+    text-align: left;
+}
+.phone_title div div ul li:first-child{
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+sup{
+    color: #f26546;
+    font-weight: bolder;
+}
+.lunbotu{
+    width: 100%;
+    height: 640px;
+    background-image: url("../jinliimage/04_1515047442501.jpg");
+    background-position: -280px;
+    float: left;
+    margin-top: 104px;
+    -webkit-animation: lunbotu 5s infinite alternate;
+}
+@-webkit-keyframes lunbotu {
+    0%{
+        background-image: url("../jinliimage/04_1515047442501.jpg");
+    }
+    100%{
+        background-image: url("../jinliimage/02_1517536570441.jpg");
+    }
+}
+.star{
+    width: 100%;
+    height: 451px;
+    float: left;
+}
+.star>.meta>h2,.middle h2{
+    padding: 40px 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: #000;
+}
+.meta>div img{
+    float: left;
+}
+.meta>div img:nth-child(2){
+    margin-left: 13px;
+    margin-right: 13px;
+}
+.middle{
+    width: 100%;
+    height: 912px;
+    float: left;
+    background-color: #e5e5e5;
+}
+.middle>div div{
+    float: left;
+}
+.right_top img{
+    width: 120px;
+    height: 240px;
+    margin: 0 auto;
+}
+.right_top:first-child img{
+    position: absolute;
+    top: 23px;
+    left: 3px;
+    transition: transform .8s .1s;
+}
+.right_top{
+    width: 290px;
+    height: 390px;
+    background-color: #fff;
+    position: relative;
+    margin: 0 auto;
 }
