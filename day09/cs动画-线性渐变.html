@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cs动画-线性渐变</title>
+    <style>
+        /*
+            线性渐变（默认从上往下）
+        */
+        .grad{
+            width: 100%;
+            height: 200px;
+            /*1、从上往下*/
+            /*谷歌内核*/
+            background: -webkit-linear-gradient(red,blue);
+            /*O鹏内核*/
+            background: -o-linear-gradient(red,blue);
+            /*火狐内核*/
+            background: -moz-linear-gradient(red,blue);
+            /*标准内核*/
+            background: linear-gradient(red,blue);
+        }
+        .grad2{
+            width: 100%;
+            height: 200px;
+            /*
+            2、to lef从右到左，
+               to right 从左到右,
+               对角
+               to left bottom 左下角
+               to left top 左上角
+            */
+            /*谷歌内核*/
+            background: -webkit-linear-gradient(to left,red,blue);
+            /*O鹏内核*/
+            background: -o-linear-gradient(red,blue);
+            /*火狐内核*/
+            background: -moz-linear-gradient(red,blue);
+            /*标准内核*/
+            background: linear-gradient(to left bottom,red,blue);
+        }
+        .grad3{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid red;
+            border-radius: 101px;
+            background: linear-gradient(-160deg,red,blue);
+        }
+        .grad4{
+            width: 100%;
+            height: 200px;
+            /*
+                重复渐变
+
+            */
+            /*谷歌内核*/
+            background: -webkit-repeating-linear-gradient(red,yellow 10%,blue 20%);
+            /*O鹏内核*/
+            background: -o-repeating-linear-gradient(red,yellow 10%,blue 20%);
+            /*火狐内核*/
+            background: -moz-repeating-linear-gradient(red,yellow 10%,blue 20%);
+            /*标准内核*/
+            background: repeating-linear-gradient(red,yellow 10%,blue 20%);
+        }
+    </style>
+</head>
+<body>
+    <div class="grad"></div>
+    <div class="grad2"></div>
+    <div class="grad3"></div>
+    <div class="grad4"></div>
+</body>
+</html>
