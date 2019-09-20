@@ -1,0 +1,69 @@
+.nav{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+.chanpin{
+    width: 100%;
+    height: 550px;
+}
+.gouji{
+    width: 100%;
+    height: 162px;
+}
+.jianjie_top{
+    width: 100%;
+    height: 455px;
+}
+.jianjie_bottom{
+    width: 100%;
+    height: 457px;
+}
+.title{
+    width: 100%;
+    height: 705px;
+}
+.title2{
+    width: 100%;
+    height: 413px;
+}
+.other{
+    width: 100%;
+    height: 61px;
+}
+.other_one{
+    width: 100%;
+    height: 480px;
+}
+.other_two{
+    width: 100%;
+    height: 278px;
+    margin-top: 5px;
+}
+.other_two_center{
+    width: 1200px;
+    height: 278px;
+    margin: 0 360px;
+    display: flex;
+}
+.other_two_center>div{
+    border: 1px solid #EAEAEA;
+    flex-grow: 1;
+}
+.other_two_center>div:hover{
+    box-shadow: 2px 5px 0 0px #f1f1f1;
+}
+.other_two_center div img{
+    width: 120px;
+    height: 120px;
+    margin: 36px auto 0;
+    position: relative;
+}
+.tuijian{
+    width: 100%;
+    margin-top: 143px;
+}
+
+
