@@ -326,22 +326,22 @@
 .sgb div:nth-child(4){
     border-top: 1px solid #2196f3;
 }
-.sgb_img img{
+.sgb_img img,.phone_right div img{
     margin: 25px 0 20px 0;
 }
-.sgb_img h4{
+.sgb_img h4,.phone_right div h4{
     font-weight: normal;
     margin-bottom: 10px;
 }
-.sgb_img p{
+.sgb_img p,.phone_right div p{
     color: #b0b0b0;
     font-size: 12px;
     margin-bottom: 20px;
 }
-.sgb_img span{
+.sgb_img span,.phone_right div span{
     color: #ff6700;
 }
-.sgb_img s{
+.sgb_img s,.phone_right div s{
     color: #b0b0b0;
     margin-left: 10px;
 }
@@ -349,4 +349,74 @@
     width: 100%;
     margin: 40px 0;
 }
-
+.phone_container{
+    width: 100%;
+    background-color: #f5f5f5;
+    padding-top: 40px;
+    overflow: hidden;
+}
+.wrap{
+    width: 1226px;
+    margin: 0 auto;
+}
+.item>h2{
+    text-align: left;
+    font-weight: normal;
+}
+.item>h2>a{
+    float: right;
+    color: #333333;
+    font-size: 16px;
+}
+.item>h2>a:hover{
+    color: #f26546;
+}
+.phone_item{
+    margin-top: 20px;
+}
+.phone_left,.phone_right{
+    height: 614px;
+    float: left;
+}
+.phone_left{
+    width: 234px;
+}
+.phone_right{
+    width: 992px;
+}
+.phone_left img{
+    width: 100%;
+}
+.phone_right div{
+    width: 234px;
+    height: 300px;
+    float: left;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    background-color: #fff;
+    position: relative;
+    /*设置鼠标滑过div浮动延迟时间五秒*/
+    transition: all .5s;
+}
+.phone_right div img{
+    width: 160px;
+    height: 160px;
+}
+.phone_right div b{
+    width: 64px;
+    height: 20px;
+    background-color: #83c44e;
+    display: inline-block;
+    line-height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -32px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 12px;
+}
+.phone_left:hover,.phone_right>div:hover{
+    transform: translate(0,-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
