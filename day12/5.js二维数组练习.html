@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1,p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>图书管理系统</h1>
+    <p>
+        <span>书名</span><input type="text" id="name">
+        <span>作者</span><input type="text" id="auto">
+        <span>价格</span><input type="text" id="price">
+        <span>数量</span><input type="text" id="num">
+    </p>
+    <p>
+        <button id="tj" onclick="tijiao()">提交</button>
+        <button id="cx" onclick="chaxun()">查询</button>
+    </p>
+    <hr>
+    <div id="showMessage"></div>
+<script>
+    var arr2 = [];
+    var nameinput = document.getElementById("name");
+    var autoinput = document.getElementById("auto");
+    var priceinput = document.getElementById("price");
+    var numinput = document.getElementById("num");
+    var showMessage = document.getElementById("showMessage");
+    function tijiao() {
+        var name = nameinput.value;
+        var auto = autoinput.value;
+        var price = priceinput.value;
+        var num = numinput.value;
+        var arr1 = [name,auto,price,num];
+        var bool = true;
+        for(var s of arr1){
+            if(!s){
+                alert("提交数据不能为空");
+                bool=false;
+                break;
+            }
+        }
+        if(bool){
+            arr2.push(arr1);
+        }
+        console.log(arr2);
+        // 清楚历史记录
+        nameinput.value = '';
+        autoinput.value = '';
+        priceinput.value = '';
+        numinput.value = '';
+    };
+
+    function chaxun() {
+        if(arr2.length==0){
+            alert("没有数据");
+            return;
+        }
+        var str = "<table border='1px' align='center' width='600px' cellspacing='0' style='text-align: center'><tr><td>书名</td><td>作者</td><td>价格</td><td>数量</td></tr>";
+        for (var a of arr2){
+            str+="<tr>";
+            for(b of a){
+              str+="<td>"+b+"</td>";
+            }
+            str+="</tr>";
+        }
+        str += "</table>";
+        showMessage.innerHTML = str;
+    }
+</script>
+</body>
+</html>

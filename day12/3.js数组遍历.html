@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数组遍历</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6,7,8,9];
+        console.log("=============方法一===============");
+        for (var i = 0 ; i<arr.length ; i ++){
+            console.log(i,arr[i]);
+        }
+        console.log("=============方法二===============");
+        for (var i in arr){
+            console.log(i,arr[i]);
+        }
+        console.log("=============方法三===============");
+        for (var i of arr){
+            console.log(i);
+        }
+        console.log("=============方法四===============");
+        arr.forEach(
+            // value数组值，index数组下标
+            function (value,index) {
+                console.log("value:"+value+",index:"+index);
+            });
+        console.log("=============方法五===============");
+        arr.map(
+            /**
+             * 可设置一个参数或者两个，三个参数function(aa,bb,cc)
+             *当一个参数时aa代表数组值
+             * 当两个参数时aa代表数组值，bb代表数组的下标
+             * 当三个参数时aa代表数组值，bb代表数组的下标，cc代表原数组
+             */
+            function (item) {
+                console.log(item);
+        });
+    </script>
+</body>
+</html>

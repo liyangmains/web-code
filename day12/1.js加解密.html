@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js加解密</title>
+</head>
+<body>
+<script>
+    /**
+     * base64加解密
+     * 对于ascll码字符加解密直接通过btoa,atob加解密
+     * 对于非ascll码字符加解密需通过encodeURIComponent，
+     * decodeURIComponent对其字符串中非ascll码字符进行加解密，
+     * 然后在对字符串中ascll码值进行btoa,atob进行加解密
+     */
+    // ascll码字符加解密
+    var str = "hello word!";
+    var jiami = btoa(str);
+    var jiemi = atob(jiami);
+    console.log("字符串："+str+"，加密："+jiami+",解密："+jiemi);
+    // 含有非ascll码字符加解密
+    str = "hello word! 鲁班七号";
+    jiami = encodeURIComponent(str);
+    jiami = btoa(jiami);
+    jiemi = atob(jiami);
+    jiemi = decodeURIComponent(jiemi);
+    console.log("字符串："+str+"，加密："+jiami+",解密："+jiemi);
+</script>
+</body>
+</html>

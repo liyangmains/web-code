@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数组</title>
+</head>
+<body>
+    <script>
+        /**
+         * js数组可存储不同类型的数值
+         * 用一个变量声明数组
+         * @type {*[]}
+         */
+        var arr = [1,2,3,4,5,6,"张飞"];
+        console.log("数组值："+arr+"。数组长度："+arr.length);
+    //    改变数组长度(数组长度小于原数组会将原数组后面的数据舍弃，
+    //    数组长度大于原数组会用空白填充后面的数据)
+        arr.length=2;
+        console.log("数组值："+arr+"。数组长度："+arr.length);
+        arr.length=6;
+        console.log("数组值："+arr+"。数组长度："+arr.length);
+        /**
+         * 调用构造函数创建数组
+         * new Array()
+         * array数组操作对象api:https://www.w3school.com.cn/jsref/jsref_obj_array.asp
+         */
+        var arr1 = new Array("a","b");
+        // concat将数组与其他数组拼接起来
+        arr1= arr1.concat(arr);
+        console.log(arr1);
+    </script>
+</body>
+</html>

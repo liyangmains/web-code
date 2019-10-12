@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组api</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,5];
+    // 尾部添加值,可添加多个元素,返回添加后数组长度
+    arr.push("鲁班七号");
+    // 头部添加值,可添加多个元素,返回添加后数组长度
+    arr.unshift("鲁班");
+    console.log(arr);
+    // 末尾删除,返回删除元素值
+    arr.pop();
+    // 头部删除,返回删除元素值
+    arr.shift();
+    console.log(arr);
+    // 数组转换成字符串,可指定分隔符,与toString作用相同，但toString只能逗号隔开
+    var str = arr.join("=");
+    console.log(str);
+    var number = 123456789;
+    var arr1 = number.toString().split("");
+    // 数组反转
+    arr1.reverse();
+    console.log("原数值："+number+",转换成数组后反转："+arr1);
+    // sort排序默认会一个数字一个数字的比较排序,可自定义排序
+    var a1 = [1,100,9,10,66,55,33,88];
+    a1.sort();
+    console.log(a1);
+    a1.sort(function (a,b) {
+        /**
+         * a-b>0 a>b
+         * a-b==0 a==b
+         * a-b<0 a<b
+         *
+         * a-b从小到大,-(a-b)从大到小
+         */
+        // return -(a-b);
+        return a-b;
+    });
+    console.log(a1);
+    // slice不会改变原数组数组截取当设置一个参数时从起始点截取到末尾，当设置两个参数只截取起始点下标，终点下标前一位（不包含终点）
+    var arr2 = arr1.slice(0,3);
+    console.log(arr2);
+    // splice(起始下标，截取长度，....需要插入数组的数值)会改变原数组
+    //也可单纯的指定数组下标插入设置截取长度为零即可，
+    // 但插入的数据会在指定的起始下标之前插入
+    console.log("splice截取数组前"+arr1);
+    var arr3 = arr1.splice(2,3,"鲁班","鲁班七号","小鲁班");
+    console.log("截取新数组:"+arr3+"原数组:"+arr1);
+    // indexOf()返回字符在数组中第一次出现的下标,没有找到返回-1
+    // lastIndexOf()返回字符在数组中最后一次出现的下标,没有找到返回-1
+</script>
+</body>
+</html>

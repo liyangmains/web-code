@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js闭包</title>
+</head>
+<body>
+<script>
+    /**
+     * 不使用var声明的变量是全局变量
+     * 但是只有函数执行后才有值
+     */
+    function test() {
+        num = 999;
+        function test2() {
+            console.log(num);
+        }
+    }
+    test();
+    console.log(num);
+    /**
+     * 闭包的作用
+     *      获取函数的局部变量
+     *      调用闭包函数的不同写法
+     *          fun()();
+     *          var result = fun(); result();
+     *      让局部变量始终生存在内存中，避免被垃圾回收机制杀死
+     * 声明在全局作用域中的函数都为window函数
+     */
+    function fun() {
+        var num = 999;
+        function fun1() {
+            console.log(num);
+            return num;
+        }
+        return fun1;
+    }
+    var result = fun();
+    console.log(result());
+
+    function func() {
+        var num = 999;
+        addNum = function () {num++;}
+        return function () {console.log(this);return num}
+    }
+    // 声明在全局作用域中的函数都为window函数，即this为window
+    var result1 = func();
+    // 由于func函数已经被调用过后，没有var修饰过的变量是全局变量，可以外部直接调用
+    console.log(result1());
+    addNum();
+    console.log(result1());
+</script>
+</body>
+</html>

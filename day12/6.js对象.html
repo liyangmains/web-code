@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js对象</title>
+</head>
+<body>
+<script>
+    /**
+     *可以使用添加属性方法
+     *      obj.height=111
+     *      obj["height"]=222
+     * 可以获取属性值方法
+     *      obj.height
+     *      obj["height"]
+     */
+    var obj = {
+        "name":"鲁班七号",
+        "age":12
+    };
+    console.log(obj);
+    var obj1 = {
+        "name":"鲁班八号",
+        "age":12,
+        // 引用外部方法会直接调用
+        "function":fangfa(),
+        // 内部自定义方法需要对象引用调用，默认不调用
+        "function1":function () {
+           console.log("我是方法一")
+        }
+    };
+    // 对象内部自定义方法需要调用属性值
+    obj1.function1();
+
+    function fangfa() {
+        console.log("我是方法");
+    }
+    // 获取对象所有的属性，返回一个数组
+    var arr = Object.keys(obj);
+    console.log(arr);
+    // 循环遍历对象
+    for (var a in obj){
+        console.log(obj[a]);
+    }
+    // 删除对象的属性
+    console.log(obj1);
+    delete obj1.name
+    console.log(obj1);
+    // 对象是否包含属性
+    console.log("name" in obj);
+
+</script>
+</body>
+</html>

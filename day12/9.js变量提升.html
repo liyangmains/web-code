@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js变量提升</title>
+</head>
+<body>
+<script>
+    console.log(num);
+    var num=111;
+
+    num2 = 666;
+    function test(){
+        console.log(num2);
+    }
+    test();
+</script>
+</body>
+</html>

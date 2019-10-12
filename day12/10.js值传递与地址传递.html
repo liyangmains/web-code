@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 基本数据类型，如字符串，boolean,数字类型等都是值传递
+     * 当test函数调用完销毁时num=66也跟着销毁，所以不会改变num=100的值
+     * @type {number}
+     */
+    var num = 100;
+    console.log("num=",num);
+    function test(num){
+        num = 66;
+        console.log("num=",num);
+    }
+    test(num);
+    console.log("num=",num);
+    console.log("===============================");
+    /**
+     * 当使用this当前window时可以修改全局属性的值
+     */
+    var num = 100;
+    console.log("num=",num);
+    function test(num){
+        this.num = num;
+        console.log("num=",this.num);
+    }
+    test(66);
+    console.log("num=",num);
+    console.log("===============================");
+    /**
+     * 对象，数组都是地址传递即堆栈空间地址传递
+     * @type {number[]}
+     */
+    var arr = [1,2,3,4,5,6];
+    console.log("arr=",arr);
+    function test1(arr){
+        arr[0]=66;
+    }
+    test1(arr);
+    console.log("arr=",arr)
+</script>
+</body>
+</html>

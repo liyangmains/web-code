@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数</title>
+</head>
+<body>
+<script>
+    /**
+     * 声明函数方法
+     * js函数没有重载
+     * 即函数名相同js会从上往下运行，后面的会覆盖前面创建的同名函数
+     */
+    function test() {
+        console.log("我是函数");
+    }
+    var t = function () {
+        console.log("我是函数");
+    }
+    /**
+     * 函数的形参和实参
+     * 形参function test1(num1,num2)
+     * 实参test1(1,2)
+     */
+    function test1(num1,num2) {
+        var c = num1+num2;
+        console.log(c);
+    }
+    test1(1,2);
+    function test2(num1,num2) {
+        var c = num1+num2;
+        return c;
+    }
+    console.log(test2(6,6));
+    /**
+     * 自执行函数
+     */
+    (
+        function (a,b) {
+            console.log(a,b);
+        }
+    )(1,2)
+</script>
+</body>
+</html>
