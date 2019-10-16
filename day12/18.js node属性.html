@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js node属性</title>
+</head>
+<body>
+    <div>
+        <p>12312312</p>
+        <p>12312312</p>
+        <span class="s">222322332</span>
+        <p>12312312</p>
+        <p>12312312</p>
+        <p>12312312</p>
+    </div>
+    <script>
+        var p = document.querySelector("p");
+        var span = document.querySelector(".s");
+        var attr = document.createAttribute("name");
+        /**
+         * nodeName,nodeType(节点的名称，节点的常量值)
+         */
+        console.log("nodeName=",document.nodeName,",nodeType=",document.nodeType);
+        console.log("nodeName=",p.nodeName,",nodeType=",p.nodeType);
+        console.log("nodeName=",span.nodeName,",nodeType=",span.nodeType);
+        console.log("p===span",p.nodeType === span.nodeType);
+        console.log("nodeName=",attr.nodeName,",nodeType=",attr.nodeType);
+        /**
+         * 节点相关属性
+         * ownerDocument:获取文档的顶层对象即document(document的顶层是null)
+         * nextSibling:返回当前节点的下一个同级节点（空白也是一个节点-->文本节点）
+         *              没有同级节点返回null
+         * previousSibling:返回当前节点的上一个同级节点（空白也是一个节点-->文本节点）
+         *              没有同级节点返回null
+         * firstChild:返回当前节点的第一个子节点（空白也是一个节点-->文本节点）
+         *              没有同级节点返回null
+         * lastChild:返回当前节点的最后一个子节点（空白也是一个节点-->文本节点）
+         *              没有同级节点返回null
+         * childNodes:返回当前节点的所有子节点动态集合nodeList即根据子节点的改变而改变（空白也是一个节点-->文本节点）
+         *              没有子节点返回空集合
+         * document.body.appendChild(节点对象):在指定节点下面添加新元素，作为最后一个子节点插入
+         * hasChildNodes():判断当前节点是否包含子节点
+         * cloneNode(true):true克隆节点包括子节点，false克隆节点不包括子节点,节点的绑定事件不会被克隆
+         * 父节点.insertBefore(新节点，指定子节点):在指定节点之前插入节点（当没有子节点或者子节点为空默认插入到最后）
+         * removeChild():删除子节点并返回节点
+         * 父节点.replaceChild(新节点，指定子节点):替换指定子节点并返回被替换掉的子节点
+         * contains():判断参数节点是不是当前节点的子节点并返回boolean
+         * isEqualNode():判断两个节点是否相等，class,id都必须一致
+         *
+         */
+        console.log(p.ownerDocument);
+        console.log(span.ownerDocument);
+        //获取所有的同级节点
+        console.log('-----------------------');
+        /*while(p){
+            console.log(p);
+            p = p.nextSibling;
+        }*/
+        console.log(p.cloneNode(false));
+        console.log(p.cloneNode(true));
+    </script>
+</body>
+</html>
