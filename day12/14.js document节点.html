@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js document节点</title>
+</head>
+<body>
+<script>
+    /**
+     * doctype:页面doctype标签文档类型声明信息，没有文档类型声明时返回null
+     * documentElement:获取当前html页面，不包含doctype
+     * charset:获取当前文档的字符集
+     * body,head/title:获取当前文档的body或者frameset节点/head/title，不存在直接返回null,
+     *      这个属性是可写的，对其写入一个新节点会导致原来的子节点删除
+     * documentURI:获取当前文档的网址，documentURI所有文档都具备,IE浏览器无法使用此属性
+     * URL:返回当前文档的网址，只有HTML文档才具备，只读
+     * domain:获取当前文档网址域名
+     * lastModified:获取文档最后修改时间
+     * location.href:获取完整的URL,可跳转另外一个网址='http://www.baidu.com'
+     * location.protocol:返回当前遵守协议
+     * location.host:返回当前页面域名+端口号
+     * location.hostname:返回当前页面域名
+     * location.port:返回当前页面端口号，如果不存在则返回空
+     * location.pathname:返回当前页面在服务器中的路径
+     * location.search:返回当前页面URL中的查询字符串(get请求?后面的字符串，包括？)
+     * location.assign:跳转到另外一个网址('http://www.baidu.com')
+     * location.reload:
+     *          (false)从当前页面缓存重新加载
+     *          (true)从服务器请求重新加载
+     * readyState:返回当前文档的状态
+     *              loading:加载html代码阶段（未完成解析）
+     *              interactive:加载外部资源阶段
+     *              complete:全部加载完成
+     * @type {DocumentType}
+     */
+    var doctype = document.doctype;
+    console.log("当前页面的dtd/doctype标签信息：",doctype);
+    var documentElement = document.documentElement;
+    console.log(documentElement);
+    var body = document.body;
+    console.log(body);
+    var documentURI = document.documentURI;
+    console.log(documentURI);
+    var url = document.URL;
+    console.log(url);
+    var domain = document.domain;
+    console.log(domain);
+    var lastModified = document.lastModified;
+    console.log(lastModified);
+</script>
+</body>
+</html>

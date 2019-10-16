@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js Math函数方法</title>
+</head>
+<body>
+<script>
+    /**
+     * Math.PI π
+     * Math.round()四舍五入，如果是负数则五大六小返回整数
+     * Math.floor()向下取整，返回小于当前数的整数
+     * Math.ceil()向上取整，返回大于当前数的整数
+     * Math.abs()获取绝对值
+     * Math,max(1,3,5,2,6)获取多个参数的最大值
+     * Math.min(1,3,5,2,6)获取多个参数的最小值
+     * Math.pow(2,4)获取幂函数2=底数，4=次幂，2^4=16
+     * Math.sqrt(16)求开平方跟=4
+     * Math.random()获取随机数Math.random()*10生成0-9随机数Math.random()*(max-min+1)+min获取[max,min]包含max,min之间的数
+     *              并包含max.min
+     */
+    console.log("Math.PI",Math.PI);
+    console.log(Math.PI,"=",Math.round(Math.PI));
+    console.log("3.5=",Math.round(3.5));
+    console.log("4.9=",Math.floor(4.9));
+    console.log("4.1=",Math.ceil(4.1));
+    var arr=[];
+    for(var i=0 ; i<10 ; i++){
+        arr.push(Math.floor(Math.random()*10))
+    }
+    console.log(arr);
+    arr=[];
+    var max=10
+    var min=5;
+    for(var i=0 ; i<10 ; i++){
+        arr.push(Math.floor(Math.random()*(max-min+1)+min));
+    }
+    console.log(arr);
+    // 生成随机验证码
+    var str = 'abcdefghijklmnopqrstuvwxyz';
+    str += 'abcdefghijklmnopqrstuvwxyz'.toLocaleUpperCase();
+    str += '0123456789';
+    console.log(str,"字符长度=",str.length);
+    // 设置生成随机数的长度
+    var num = 5;
+    // 获取字符串的长度
+    var max = str.length;
+    var min = 1;
+    var code='';
+    var obj = {};
+    for(var i=0 ; i<num ; i++){
+        var s = createRadom(min,max);
+        code += str[s-1];
+        obj["第"+(i+1)+"次"]="随机数:"+s+"字符:"+str[s-1];
+    }
+    console.log("obj=",obj,"\n验证码code=",code);
+    function createRadom(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+</script>
+</body>
+</html>

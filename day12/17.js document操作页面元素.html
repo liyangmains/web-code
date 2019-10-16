@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js document操作页面元素</title>
+    <style>
+        #p1{
+            font-size: 18px;
+            color:red;
+            text-align: center;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span>用户名：</span><input type="text" class="userName"><br>
+        <span>性别：</span><input type="text" class="userSex" name="sex"><br>
+        <span>年龄：</span><input type="text" class="userAge"><br>
+    </p>
+    <p id="p1">1231231231231231231123112312</p>
+    <script>
+        /**
+         * querySelector('选择器'):获取页面中的一个元素，如果多个元素满足则返回第
+         *                          一次出现的元素
+         * querySelectorAll('选择器');获取页面中的所有满足要求的元素返回一个集合，
+         *                            可以采用类似于数组选择元素的方式选择要用的元素
+         * @type {Element}
+         */
+        var p = document.querySelector('p');
+        console.log("p",p);
+        var userName = document.querySelector('.userName');
+        console.log("userName",userName);
+        var p1 = document.querySelector('#p1');
+        console.log("p1",p1);
+        var sex = document.querySelector('input[name="sex"]');
+        console.log("sex",sex);
+        /**
+         * 创建页面标签，需要添加到页面容器内
+         * createElement(标签名)
+         */
+        var p1 = document.createElement('p');
+        // 向页面添加到当前页面(向页面最后添加)
+        document.body.appendChild(p1);
+        // 创建文本节点或者innerHtml
+        /*var p_text = document.createTextNode('新建标签!');
+        p1.appendChild(p_text);*/
+        p1.innerHTML='新建标签';
+        /**
+         * 创建属性节点
+         * 方法一：
+         * p1.setAttributeNode(attribute);
+         * attribute.value='center';
+         * p1.setAttributeNode(attribute);
+         * 方法二：
+         * p1.setAttribute('name','p_attr');
+         */
+        var attribute = document.createAttribute('align');
+        attribute.value='center';
+        p1.setAttributeNode(attribute);
+        p1.setAttribute('name','p_attr');
+
+        /**
+         * 操作属性（style只能操作行内样式）
+         * getAttribute():返回属性值
+         * setAttribute():设置属性
+         * removeAttribute():删除属性
+         */
+        var s = p1.getAttribute(attribute);
+        console.log(s);
+        p1.setAttribute('class','p1');
+        p1.removeAttribute("class");
+        /**
+         * 操作属性(只能操作style行内样式)
+         * 添加样式
+         * pro.setProperty("width","600px");
+         * 获取样式值
+         * pro.getPropertyValue("width");
+         * 删除样式
+         * pro.removeProperty("width");
+         */
+        var pro = p1.style;
+        pro.setProperty("width","600px");
+        var pp = pro.getPropertyValue("width");
+        pro.removeProperty("width");
+        console.log("pp=",pp);
+        /**
+         * 元素名.属性名可以直接获取或修改属性值(操作的是行内样式)
+         * p2.name='p3';
+         */
+        var p2 = document.querySelector("#p1").style;
+        // p2.backgroundColor='orange';
+        p2.height="100px";
+        //或者直接一行设置(操作的是行内样式)
+        p2.cssText="line-height:100px;color:blue;background-color:red;";
+        console.log('p2',p2);
+        // p2.cssFloat="left";
+
+        /**
+         * 创建一个导航栏
+         */
+        var arr = ['百度一下','百度一下','百度一下','百度一下','百度一下'];
+        var ul = document.createElement('ul');
+        for(var a in arr){
+            var li = document.createElement('li');
+            li.innerHTML=arr[a];
+            ul.appendChild(li);
+            li.setAttribute('style','float:left;width:80px;height:40px;' +
+                            'text-align:center;line-height:40px;' +
+                            'background-color:skyblue;cursor:pointer');
+            var idName = 'dh'+a;
+            li.setAttribute('id',idName);
+            // 鼠标移到li标签
+            li.setAttribute('onmouseover','dhOver("'+idName+'")');
+            // 鼠标移开li标签
+            li.setAttribute('onmouseout','dhOut("'+idName+'")');
+        }
+        document.body.appendChild(ul);
+        ul.setAttribute('style','list-style:none;');
+        function dhOver(idName) {
+            // dh.getAttribute('style')+'background-color:red;';
+            var dh = document.getElementById(idName);
+            dh.setAttribute("style",dh.getAttribute("style").replace('background-color:skyblue;','background-color:red;'));
+        }
+        function dhOut(idName){
+            var dh = document.getElementById(idName);
+            dh.setAttribute("style",dh.getAttribute("style").replace('background-color:red;','background-color:skyblue;'));
+        }
+    </script>
+</body>
+</html>

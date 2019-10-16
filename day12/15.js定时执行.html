@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js定时执行</title>
+</head>
+<body>
+<script>
+    /**
+     * 定时执行/间隔执行 每隔多长时间执行一次执行函数（函数，毫秒数）
+     */
+    setInterval(function () {
+        console.log(1111111111111);
+    },1000);
+    /**
+     * 删除定时器
+     */
+    var t = setInterval(function () {
+        console.log(2222222222);
+    },1000);
+    clearInterval(t);
+    /**
+     * 设置当文档加载完毕后终止定时器
+     */
+    console.log('-------------------------');
+    var s = setInterval(function () {
+        console.log(document.readyState);
+        //complete页面加载完成
+       if(document.readyState == 'complete'){
+           clearInterval(s);
+       }
+    },300);
+    /**
+     * 设置title跑马灯效果
+     */
+    var title = document.title;
+    var arr= title.split("");
+    setInterval(function () {
+        // 删除数组第一个下标值并返回下标值
+        var frist = arr.shift();
+        arr.push(frist);
+        document.title=arr.join("");
+    },500);
+</script>
+</body>
+</html>
