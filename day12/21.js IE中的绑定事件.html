@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p class="p1" onclick="test()">111111111111111111111111</p>
+    <p id="p2">222222222222222222222222</p>
+    <script>
+        /**
+         * 兼容html事件
+         *      <p class="p1" onclick="test()">111111111111111111111111</p>
+         * 兼容DOM0事件
+         *      p2.onclick=function () {
+         *          console.log(22222);
+         *      }
+         * 兼容DOM2事件 IE9兼容，IE8及以下不兼容addEventListener
+         * attachEvent IE8及以下支持冒泡不支持事件捕获
+         * IE9浏览器内一个元素绑定多个DOM2事件，则按照绑定的顺序
+         * 从上到下执行
+         * IE8及其以下一个元素绑定多个DOM2事件则逆序执行
+         */
+        function test() {
+            console.log(11111);
+        }
+        var p2 = document.querySelector("#p2");
+        p2.onclick=function () {
+            console.log(22222);
+        }
+        var p2 = document.getElementById('p2');
+        p2.attachEvent("onclick",function () {
+            console.log(33333);
+        });
+    </script>
+</body>
+</html>

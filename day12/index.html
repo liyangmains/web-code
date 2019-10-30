@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./jquery/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div class="recproduct_list5" style="">
+    <a href="javascript:void(0)" class="leftBtn"></a>
+    <a href="javascript:void(0)" class="rightBtn"></a>
+    <div class="list_box5">
+        <div class="dl_box" id="list5">
+            <dl>
+                <dt><a href="product-details-222.html"><img src=""></a></dt>
+                <dd><a href="product-details-222.html"> LED机房信号灯444：SJ-DC24V-...</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="product-details-221.html"><img src=""></a></dt>
+                <dd><a href="product-details-221.html"> LED机房灯-SJ-SM550</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="product-details-220.html"><img src=""></a></dt>
+                <dd><a href="product-details-220.html"> LED机房灯：SJ-JFD-36W</a></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="recproduct_list1" style="display: none;">
+    <a href="javascript:void(0)" class="leftBtn"></a>
+    <a href="javascript:void(0)" class="rightBtn"></a>
+    <div class="list_box1">
+        <div class="dl_box">
+            <dl>
+                <dt><a href="product-details-222.html"><img src=""></a></dt>
+                <dd><a href="product-details-222.html"> LED机房信号灯1111：SJ-DC24V-...</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="product-details-221.html"><img src=""></a></dt>
+                <dd><a href="product-details-221.html"> LED机房灯-SJ-SM550</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="product-details-220.html"><img src=""></a></dt>
+                <dd><a href="product-details-220.html"> LED机房灯：SJ-JFD-36W</a></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="recproduct_list2" style="display: none;">
+    <a href="javascript:void(0)" class="leftBtn"></a>
+    <a href="javascript:void(0)" class="rightBtn"></a>
+    <div class="list_box1">
+        <div class="dl_box">
+
+
+            <dl>
+                <dt><a href="product-details-222.html"><img src=""></a></dt>
+                <dd><a href="product-details-222.html"> LED机房信号灯2222：SJ-DC24V-...</a></dd>
+            </dl>
+
+
+
+            <dl>
+                <dt><a href="product-details-221.html"><img src=""></a></dt>
+                <dd><a href="product-details-221.html"> LED机房灯-SJ-SM550</a></dd>
+            </dl>
+
+
+
+            <dl>
+                <dt><a href="product-details-220.html"><img src=""></a></dt>
+                <dd><a href="product-details-220.html"> LED机房灯：SJ-JFD-36W</a></dd>
+            </dl>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<div class="recproduct_list3" style="display: none;">
+    <a href="javascript:void(0)" class="leftBtn"></a>
+    <a href="javascript:void(0)" class="rightBtn"></a>
+    <div class="list_box1">
+        <div class="dl_box">
+
+
+            <dl>
+                <dt><a href="product-details-222.html"><img src=""></a></dt>
+                <dd><a href="product-details-222.html"> LED机房信号灯3333：SJ-DC24V-...</a></dd>
+            </dl>
+
+
+
+            <dl>
+                <dt><a href="product-details-221.html"><img src=""></a></dt>
+                <dd><a href="product-details-221.html"> LED机房灯-SJ-SM550</a></dd>
+            </dl>
+
+
+
+            <dl>
+                <dt><a href="product-details-220.html"><img src=""></a></dt>
+                <dd><a href="product-details-220.html"> LED机房灯：SJ-JFD-36W</a></dd>
+            </dl>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<div class="recproduct_list4" style="display: none;">
+    <a href="javascript:void(0)" class="leftBtn"></a>
+    <a href="javascript:void(0)" class="rightBtn"></a>
+    <div class="list_box1">
+        <div class="dl_box">
+
+
+            <dl>
+                <dt><a href="product-details-222.html"><img src=""></a></dt>
+                <dd><a href="product-details-222.html"> LED机房信号灯444444：SJ-DC24V-...</a></dd>
+            </dl>
+
+
+
+            <dl>
+                <dt><a href="product-details-221.html"><img src=""></a></dt>
+                <dd><a href="product-details-221.html"> LED机房灯-SJ-SM550</a></dd>
+            </dl>
+
+
+
+            <dl>
+                <dt><a href="product-details-220.html"><img src=""></a></dt>
+                <dd><a href="product-details-220.html"> LED机房灯：SJ-JFD-36W</a></dd>
+            </dl>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<script>
+    var textHtml = '';
+    for(var i = 0 ; i< 3 ;i++){
+        var list1 = $(".recproduct_list"+(i+1));
+        var dl_box = list1.find(".dl_box");
+        textHtml += dl_box.html();
+    }
+
+    var list5 = document.getElementById("list5");
+    console.log(list5.innerHTML);
+    list5.innerHTML = textHtml + list5.innerHTML;
+
+</script>
+</body>
+
+</html>

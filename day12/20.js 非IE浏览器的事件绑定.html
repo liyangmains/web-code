@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+        }
+        .div4{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<hr>
+    <div class="div1" onclick="test1();test2()" ondblclick="test3()"></div>
+    <button class="btn">解绑事件</button>
+<hr>
+    <div class="div2">
+        <button class="btn2">点击</button>
+    </div>
+    <button class="btn3">解除绑定</button>
+<hr>
+    <div class="div3">
+        <div class="div4"></div>
+    </div>
+    <button class="btn4">解除绑定</button>
+    <script>
+        /**
+         * onclick单击事件
+         * ondblclick双击事件
+         * 事件绑定名称，事件绑定发生在哪里就称为什么事件
+         * html事件 事件绑定发生在页面称为html事件
+         *          <diiv class="div1" onclick="test1();test2()"></diiv>
+         *          html事件可以一次性绑定多个函数
+         *          函数与函数之间可以使用；分隔
+         *          牵一发动全身，代码耦合性过高（修改功能需要不停地修改源码）
+         *          html事件一个元素可以绑定多个事件
+         * DOM0事件 事件绑定写在js代码块中
+         *          方法一 btn2.onclick=function ()
+         *          方法二 btn2['onclick']=function()
+         *          DOM0事件也支持冒泡
+         *          DOM0事件绑定有名函数不需要加()
+         *              function test(){}
+         *              btn2.onclick=test;
+         *          同一个元素只能同时绑定一种类型的事件
+         *          DOM0事件解绑直接将事件置为空
+         *              btn2.onclick=''/btn2.onclick=null
+         *
+         * DOM2事件 事件绑定在js代码块中
+         *          元素名.addEventListener(事件类型，函数，是否捕获)
+         *          div3.addEventListener('click',function () {
+                    console.log('div3');
+                     });
+                    当不写true/false时事件默认冒泡false
+                        true先执行捕获事件在执行冒泡事件
+                    可同时绑定多个相同类型的事件，从上到下依次执行
+                    DOM2事件解绑需要匿名函数才能解绑,如果事件绑定设置为true,
+                    解绑也需设置为true事件捕获
+                     function test3(){
+                     console.log('div3');
+                     }
+                     div3.addEventListener('click',test3);
+                     div3.removeEventListener('click',test3);
+                    或者
+                    div3.addEventListener('click',test3,true);
+                    div3.removeEventListener('click',test3,true);
+         */
+        console.log("----------------------------html事件------------------------------");
+        function test1(){
+            console.log("test1");
+        }
+        function test2(){
+            console.log("test2");
+        }
+        function test3() {
+            console.log("test3");
+        }
+        var btn = document.querySelector(".btn");
+        var div1 = document.querySelector(".div1");
+        btn.onclick=function () {
+            // 解除绑定事件
+            div1.removeAttribute("onclick");
+        }
+        console.log("----------------------------DOM0事件------------------------------");
+        var div2 = document.querySelector(".div2");
+        var btn2 = document.querySelector(".btn2");
+        var btn3 = document.querySelector(".btn3");
+        btn2.onclick=function () {
+            console.log("btn2");
+        }
+        div2.onclick=function () {
+            console.log("div2");
+        }
+        btn3.onclick=function(){
+            btn2.onclick='';
+            div2.onclick='';
+        }
+        console.log("----------------------------DOM2事件------------------------------");
+        var div3 = document.querySelector(".div3");
+        var div4 = document.querySelector(".div4");
+        var btn4 = document.querySelector(".btn4");
+       /* div3.addEventListener('click',function () {
+            console.log('div3');
+        });*/
+        div4.addEventListener('click',function () {
+            console.log('div4');
+        },true);
+        function test3(){
+            console.log('div3');
+        }
+        div3.addEventListener('click',test3);
+        btn4.onclick=function () {
+            div3.removeEventListener('click',test3);
+        }
+
+    </script>
+</body>
+</html>

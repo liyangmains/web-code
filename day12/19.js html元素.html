@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js html元素</title>
+    <style>
+        .div1{
+            background-color: orange;
+            width: 200px;
+            height: 200px;
+        }
+        .d1{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            position: relative;
+            left: 100px;
+        }
+        .d2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        .d3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+
+</div>
+<p id="p-id" style="position: relative">
+    <span id="span-id" style="position: relative">
+        <a href="#" id="a-id">this</a>
+    </span>
+</p>
+<div class="d1">
+    <div class="d2">
+        <div class="d3"></div>
+    </div>
+</div>
+<script>
+    var html = document.documentElement;
+    /**
+     * 浏览器视图窗口的宽高
+     * 不包括滚动条的宽高
+     */
+    console.log('clientWidth',html.clientWidth);
+    console.log('clientHeight',html.clientHeight);
+    /**
+     * 获取元素的宽高
+     */
+    var div1 = document.querySelector(".div1");
+    console.log('offsetWidth',div1.offsetWidth);
+    console.log('offsetHeight',div1.offsetHeight);
+    /**
+     * 浏览器视图窗口宽高
+     * 包括滚动条的宽高
+     */
+    console.log('innerWidth',window.innerWidth);
+    console.log('innerHeight',window.innerHeight);
+    /**
+     * offsetParent作用，查找与当前最近的
+     * 拥有position定位属性的，值不等于static元素节点
+     * 没有会返回body节点
+     */
+    var a = document.querySelector("#a-id");
+    console.log(a.offsetParent);
+    /**
+     * offsetLeft作用
+     * 查找与当前最近的
+     * 拥有position定位属性的，值不等于static元素节点
+     * 当前元素相对于父元素的左偏移量不包括边框的距离
+     */
+    var d3 = document.querySelector(".d3");
+    console.log("d3.offsetLeft",d3.offsetLeft);
+</script>
+</body>
+</html>
