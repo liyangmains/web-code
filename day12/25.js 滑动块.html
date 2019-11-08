@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*body{
+            padding: 0;
+            margin: 0;
+        }*/
+        .show{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid skyblue;
+            display: none;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <span>数值：</span><input type="range" min="0" max="100" class="ra">
+    <div class="show"></div>
+    <script>
+        var ra = document.querySelector(".ra");
+        var show = document.querySelector(".show");
+        // 获取滑动块的左边X，右边X坐标
+        var raLeft = ra.offsetLeft;
+        var raWidth = ra.offsetWidth+raLeft;
+        var flag = false;
+        ra.onmousedown = function () {
+            show.style.display="block";
+            show.innerHTML=ra.value;
+            // 获取鼠标x坐标
+            var left = event.clientX;
+            //div移动需要添加定位元素
+            show.style.left = left - 15 + "px";
+            flag = true;
+        }
+
+        ra.onmousemove = function () {
+            if(flag){
+                show.innerHTML=ra.value;
+                // 获取鼠标x坐标
+                var left = event.clientX;
+                if(left < raLeft){
+                    left = raLeft;
+                }
+                if(left > raWidth){
+                    left = raWidth;
+                }
+                //div移动需要添加定位元素
+                show.style.left = left - 15 + "px";
+            }
+        }
+
+        ra.onmouseup = function () {
+            flag = false;
+            show.style.display="none";
+        }
+    </script>
+</body>
+</html>

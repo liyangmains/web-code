@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <script>
+        var div = document.querySelector(".div1");
+
+        var flag = false;
+        var divLeft = div.offsetLeft;
+        var divTop = div.offsetTop;
+        var leftx = 0;
+        var topy = 0;
+        var temLeft = 0;
+        var temTop = 0;
+        div.onmousedown = function(){
+            temLeft = event.clientX;
+            temTop = event.clientY;
+            leftx = temLeft-divLeft;
+            topy = temTop-divTop;
+            flag = true;
+        };
+        div.onmouseup = function(){
+            flag = false;
+        };
+        div.onmouseout = function(){
+            flag = false;
+        }
+        div.onmousemove = function () {
+
+            if(flag){
+                // 获取鼠标x,y
+                temLeft = event.clientX;
+                temTop = event.clientY;
+                div.style.left=temLeft-leftx+"px";
+                div.style.top=temTop-topy+"px";
+                divLeft = temLeft-leftx;
+                divTop = temTop-topy;
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script src="./js/tools.js"></script>
+</head>
+<body>
+    <div class="div1"></div>
+    <button class="b1">解除绑定</button>
+    <script>
+        /**
+         * dom2事件绑定
+         *  元素名.addEventlistener('类型'，函数)
+         *  元素名.attachEvent'on+类型'，函数)
+         */
+        var div1 = document.querySelector(".div1");
+        var b1 = document.querySelector('.b1');
+        /**
+         * 添加事件绑定方法
+         * @param ele
+         * @param type
+         * @param methodName
+         */
+        function addEvent(ele,type,methodName) {
+            if(ele.addEventListener){
+                ele.addEventListener(type,methodName);
+                console.log("谷歌");
+            }else if(ele.attachEvent){
+                ele.attachEvent("on"+type,methodName);
+                console.log("IE");
+            }else{
+                ele['on'+type]=null;
+            }
+        }
+
+        /**
+         * 添加事件移除方法
+         * @param ele
+         * @param type
+         * @param methodName
+         */
+        function removeEvent(ele,type,methodName){
+            if(ele.removeEventListener){
+                ele.removeEventListener(type,methodName);
+            }else if(ele.detachEvent){
+                ele.detachEvent('on'+type,methodName);
+            }else{
+                ele['on'+type] = '';
+            }
+        }
+
+        /**
+         * 封装工具对象
+         *
+         */
+        var tool = {
+          'addEvent': function(ele,type,methodName) {
+                          if(ele.addEventListener){
+                              ele.addEventListener(type,methodName);
+                              console.log("谷歌");
+                          }else if(ele.attachEvent){
+                              ele.attachEvent("on"+type,methodName);
+                              console.log("IE");
+                          }else{
+                              ele['on'+type]=null;
+                          }
+                        },
+           'removeEvent': function removeEvent(ele,type,methodName){
+                           if(ele.removeEventListener){
+                               ele.removeEventListener(type,methodName);
+                           }else if(ele.detachEvent){
+                               ele.detachEvent('on'+type,methodName);
+                           }else{
+                               ele['on'+type] = '';
+                           }
+                        }
+        };
+        function test(){
+            console.log("test");
+        }
+        /*tool.addEvent(div1,"click",test);
+        tool.addEvent(b1,"click",function(){
+            tool.removeEvent(div1,'click',test);
+        });*/
+        // 提取js文件工具类
+        tools.addEvent(div1,"click",test);
+        tools.addEvent(b1,"click",function(){
+            tool.removeEvent(div1,'click',test);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img src="../day11/images/banner12.png" class="img" alt="">
+    <script>
+        var img = document.querySelector(".img");
+        // 加载成功
+        img.onload=function () {
+            console.log("加载成功");
+        }
+        // 加载失败
+        img.onerror=function () {
+            console.log("加载失败");
+        }
+        /**
+         * 所有内容加载完成加载window.onerror
+         */
+        window.onload=function () {
+            console.log("window");
+        }
+    </script>
+</body>
+</html>

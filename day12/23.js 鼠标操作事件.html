@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 鼠标操作事件</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <script>
+        var div = document.querySelector(".div1");
+
+        div.onmousedown = function () {
+            console.log('鼠标被按下了');
+        }
+        div.onmouseup = function () {
+            console.log('鼠标被松开了');
+        }
+        div.onmousemove = function () {
+            console.log('鼠标在移动');
+        }
+        // onmouseenter onmouseleave不会冒泡
+        div.onmouseenter = function () {
+            console.log('鼠标进入了div');
+        }
+        div.onmouseleave = function () {
+            console.log('鼠标离开了');
+        }
+        div.onmouseover = function () {
+            console.log('鼠标进入了div');
+        }
+        div.onmouseout = function () {
+            console.log('鼠标离开了');
+        }
+    </script>
+</body>
+</html>

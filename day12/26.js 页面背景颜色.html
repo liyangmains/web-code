@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      /*  body{
+            background-color: rgb(200,200,200);
+        }*/
+    </style>
+</head>
+<body>
+<p>
+    <span>R:</span>
+    <button class="rsub">-</button>
+    <input type="text" class="rinput" placeholder="200">
+    <button class="radd">+</button>
+</p>
+<p>
+    <span>G:</span>
+    <button class="gsub">-</button>
+    <input type="text" class="ginput" placeholder="200">
+    <button class="gadd">+</button>
+</p>
+<p>
+    <span>B:</span>
+    <button class="bsub">-</button>
+    <input type="text" class="binput" placeholder="200">
+    <button class="badd">+</button>
+</p>
+<button class="zhixin">执行</button>
+<script>
+    var rsub = document.querySelector(".rsub");
+    var gsub = document.querySelector(".gsub");
+    var bsub = document.querySelector(".bsub");
+    var rinput = document.querySelector(".rinput");
+    var ginput = document.querySelector(".ginput");
+    var binput = document.querySelector(".binput");
+    var radd = document.querySelector(".radd");
+    var gadd = document.querySelector(".gadd");
+    var badd = document.querySelector(".badd");
+    var zhixin = document.querySelector(".zhixin");
+    var r = 200;
+    var g = 200;
+    var b = 200;
+    document.body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+    zhixin.onclick = function () {
+        if(rinput.value<0){
+            rinput.value=0;
+        }
+        if(rinput.value>255){
+            rinput.value=255;
+        }
+        if(ginput.value<0){
+            ginput.value=0;
+        }
+        if(ginput.value>255){
+            ginput.value=255;
+        }
+        if(binput.value<0){
+            binput.value=0;
+        }
+        if(binput.value>255){
+            binput.value=255;
+        }
+
+        document.body.style.backgroundColor="rgb("+rinput.value+","+ginput.value+","+binput.value+")";
+    }
+    rsub.onclick = function () {
+        if(r<=0){
+            r=0;
+        }else {
+            r--;
+        }
+        rinput.value=r;
+    }
+    radd.onclick = function () {
+        if(r>=255){
+            r=255;
+        }else {
+            r++;
+        }
+        rinput.value=r;
+    }
+    gsub.onclick = function () {
+        if(g<=0){
+            g=0;
+        }else {
+            g--;
+        }
+        ginput.value=g;
+    }
+    gadd.onclick = function () {
+        if(g>=255){
+            g=255;
+        }else {
+            g++;
+        }
+        ginput.value=g;
+    }
+    bsub.onclick = function () {
+        if(b<=0){
+            b=0;
+        }else {
+            b--;
+        }
+        binput.value=b;
+    }
+    badd.onclick = function () {
+        if(b>=255){
+            b=255;
+        }else{
+            b++;
+        }
+        binput.value=b;
+    }
+</script>
+</body>
+</html>
